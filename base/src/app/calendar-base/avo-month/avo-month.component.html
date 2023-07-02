@@ -2,7 +2,7 @@
   <div class="calendar-header">
     <img id="icon" src="\assets\Kalendar.png" alt="Kalendar" />
     <mat-button-toggle-group
-      value="Heute"
+      value="Monat"
       name="fontStyle"
       aria-label="Font Style"
       class="toggle-group"
@@ -16,11 +16,17 @@
 
   <mat-card class="demo-inline-calendar-card">
     <mat-calendar
-      class="custom-calendar"
       [(selected)]="selected"
       [startView]="startView"
       [startAt]="startAt"
+      panelClass="custom-calendar"
     ></mat-calendar>
+
+    <div class="button-container">
+      <button mat-fab class="plus-icon">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
   </mat-card>
   <!-- <p>Selected date: {{ selected?.getDate }}</p> -->
 </div>

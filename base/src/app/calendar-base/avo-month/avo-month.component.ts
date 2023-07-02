@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AvoMonthComponent {
   selected: Date | null;
-  startView: 'month' | 'year' | 'multi-year' = 'month';
+  startView: 'month' | 'year' | 'multi-year' = 'year';
   startAt: Date = new Date();
 } 
