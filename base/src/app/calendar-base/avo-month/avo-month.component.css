@@ -1,0 +1,59 @@
+.calendar-box {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.calendar-header {
+  display: flex;
+  position: relative;
+  padding: 5%;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 5vh;
+}
+
+.demo-inline-calendar-card {
+  width: 100%;
+  box-shadow: none;
+  border: none;
+}
+
+.toggle-group {
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  height: 70%;
+
+  border-radius: 8px;
+  border: 2.5px solid rgba(247, 246, 246, 1);
+}
+
+mat-button-toggle {
+  padding: 5px;
+  background-color: rgba(247, 246, 246, 1);
+  border-width: 1px;
+}
+
+.mat-button-toggle.mat-button-toggle-checked {
+  background-color: white;
+}
+
+::ng-deep .mat-calendar-content .mat-calendar-table tr:not(:first-child) td {
+  border-top: 1px solid rgba(228, 228, 228, 1);
+}
+
+::ng-deep .mat-calendar-body-cell {
+  /* Apply your custom styles for mat-calendar cells here */
+  background-color: #ff0000;
+  color: #a40000;
+}
+
+#icon {
+  width: 27.5vw;
+}
