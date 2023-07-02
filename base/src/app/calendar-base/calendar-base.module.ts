@@ -10,6 +10,9 @@ import { AvoMonthComponent } from './avo-month/avo-month.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    AvoMonthComponent
   ]
 })
 export class CalendarBaseModule { }
