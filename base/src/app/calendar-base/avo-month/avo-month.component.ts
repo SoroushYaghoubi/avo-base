@@ -24,4 +24,6 @@ export class AvoMonthComponent {
     this.startView=selectedValue;
     console.log(this.startView)
   }
+
+
 }
