@@ -9,10 +9,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AvoLayoutComponent } from './layout/layout.component';
-import { AvoDayComponent } from './avo-day/avo-day.component';
 
 @NgModule({
-  declarations: [AvoMonthComponent, AvoLayoutComponent, AvoDayComponent],
+  declarations: [AvoMonthComponent, AvoLayoutComponent],
   imports: [
     CommonModule,
 
