@@ -34,5 +34,17 @@
 
   <div *ngIf="popUp" class="pop-up">
     <button id="pull-icon"></button>
+
+    <div class="calendar-header">
+      <mat-button-toggle-group
+        (change)="onChangeValue($event)"
+        name="fontStyle"
+        aria-label="Font Style"
+        class="toggle-group"
+      >
+        <mat-button-toggle value="new">Neuer Termin</mat-button-toggle>
+        <mat-button-toggle value="delete">Abwesenheit</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
   </div>
 </mat-card>
