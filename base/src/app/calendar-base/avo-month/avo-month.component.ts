@@ -9,11 +9,13 @@ import { CalendarEvent, CalendarView } from 'angular-calendar';
   selector: 'avo-month',
   templateUrl: './avo-month.component.html',
   styleUrls: ['./avo-month.component.css'],
-  styles:[`
-  .mwl-calendar-day-view {
-    border: none;
-  }
-`]
+  styles: [
+    `
+      .mwl-calendar-day-view {
+        border: none;
+      }
+    `,
+  ],
 })
 export class AvoMonthComponent {
   // ng material
@@ -29,6 +31,8 @@ export class AvoMonthComponent {
   onChangeValue(event: MatButtonToggleChange) {
     const selectedValue = event.value;
     this.startView = selectedValue;
+
+    this.popUp = false;
     console.log(this.startView);
   }
 
@@ -37,7 +41,18 @@ export class AvoMonthComponent {
   viewDate: Date = new Date();
   events: CalendarEvent[] = this.PersonInfo.getDates();
 
-
   // avo pop up
-  popUp: boolean = true;
+  appo_view: string = 'new';
+
+  popUp: boolean = false;
+
+  popper() {
+    this.popUp = !this.popUp;
+  }
+
+  onChangeMode(event: MatButtonToggleChange) {
+    const selectedValue = event.value;
+    this.appo_view = selectedValue;
+    console.log(this.startView);
+  }
 }

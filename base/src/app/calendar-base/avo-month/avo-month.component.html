@@ -2,6 +2,7 @@
   <div class="calendar-header">
     <img id="icon" src="\assets\Kalendar.png" alt="Kalendar" />
     <mat-button-toggle-group
+      [value]="'month'"
       (change)="onChangeValue($event)"
       name="fontStyle"
       aria-label="Font Style"
@@ -27,24 +28,104 @@
     ></mat-calendar>
   </div>
   <div class="button-container">
-    <button mat-fab class="plus-icon">
+    <button (click)="popper()" mat-fab class="plus-icon">
       <mat-icon>add</mat-icon>
     </button>
   </div>
 
   <div *ngIf="popUp" class="pop-up">
-    <button id="pull-icon"></button>
+    <button id="pull-icon" (click)="popper()"></button>
 
     <div class="calendar-header">
       <mat-button-toggle-group
-        (change)="onChangeValue($event)"
+        [value]="'new'"
+        (change)="onChangeMode($event)"
         name="fontStyle"
         aria-label="Font Style"
         class="toggle-group"
       >
         <mat-button-toggle value="new">Neuer Termin</mat-button-toggle>
-        <mat-button-toggle value="delete">Abwesenheit</mat-button-toggle>
+        <mat-button-toggle value="cancel">Abwesenheit</mat-button-toggle>
       </mat-button-toggle-group>
+    </div>
+
+    <div class="scrollable">
+      <div [ngSwitch]="appo_view">
+        <div *ngSwitchCase="'new'" class="input-fields">
+          <mat-form-field class="avo-field" matFormFieldAppearance="fill">
+            <mat-label>z.B. kostenlose Erstberatung</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Beginn</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Ende</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Vorname</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Nachname</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Email</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Handy Nummer</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">Vor-Ort Termin</mat-option>
+              <mat-option value="two">Online Termine</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div *ngSwitchCase="'cancel'" class="input-fields">
+          <mat-form-field class="avo-field" matFormFieldAppearance="fill">
+            <mat-label>z.B. Gerichtstermin </mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Beginn</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="avo-field">
+            <mat-label>Ende</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="calendar-footer">
+      <button
+        (click)="popper()"
+        mat-raised-button
+        style="
+          background-color: rgba(16, 95, 187, 1);
+          color: white;
+          border-radius: 10px;
+        "
+        class="footer-buttons"
+      >
+        Speichern
+      </button>
+      <button
+        (click)="popper()"
+        mat-stroked-button
+        style="background-color: white; color: black; border-radius: 10px"
+        class="footer-buttons"
+      >
+        Löschen
+      </button>
     </div>
   </div>
 </mat-card>
