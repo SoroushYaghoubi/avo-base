@@ -13,19 +13,32 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AvoLayoutComponent } from './layout/layout.component';
 
+
+// ng calendar
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 @NgModule({
   declarations: [AvoMonthComponent, AvoLayoutComponent],
   imports: [
     CommonModule,
 
+
+    // ng material
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
     MatButtonToggleModule,
-
     MatButtonModule,
     MatIconModule,
+
+    // ng calendar
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   exports: [AvoMonthComponent, AvoLayoutComponent],
 })

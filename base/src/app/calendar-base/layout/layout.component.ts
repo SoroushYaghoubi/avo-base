@@ -7,5 +7,4 @@ import { NgModel } from '@angular/forms';
   styleUrls: ['./layout.component.css']
 })
 export class AvoLayoutComponent {
-  startView: 'month' | 'year' | 'multi-year' = 'month';
 }
