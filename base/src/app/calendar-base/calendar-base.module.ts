@@ -2,17 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AvoMonthComponent } from './avo-month/avo-month.component';
 
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatCardModule} from '@angular/material/card';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AvoLayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [
-    AvoMonthComponent
-  ],
+  declarations: [AvoMonthComponent, AvoLayoutComponent],
   imports: [
     CommonModule,
 
@@ -23,10 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonToggleModule,
 
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
-  exports:[
-    AvoMonthComponent
-  ]
+  exports: [AvoMonthComponent, AvoLayoutComponent],
 })
-export class CalendarBaseModule { }
+export class CalendarBaseModule {}

@@ -1,10 +1,19 @@
-
-
-.demo-inline-calendar-card {
+.calendar-box {
+  position: relative;
   width: 100%;
-  box-shadow: none;
-  border: none;
+  display: block;
 }
+
+.calendar-header {
+  display: flex;
+  position: relative;
+  padding: 5%;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 5vh;
+}
+
 
 .toggle-group {
   font-weight: bold;
@@ -44,27 +53,29 @@ mat-button-toggle {
   margin-right: 10%;
 }
 
-
-::ng-deep .mat-calendar .mat-calendar-body .mat-calendar-body-cell .mat-calendar-body-selected {
-  background-color:rgba(16, 95, 187, 1);
+::ng-deep
+  .mat-calendar
+  .mat-calendar-body
+  .mat-calendar-body-cell
+  .mat-calendar-body-selected {
+  background-color: rgba(16, 95, 187, 1);
 }
 
+#icon {
+  width: 25vw;
+}
 
-
-
-
-.button-container{
+.button-container {
   display: block;
   padding-right: 7.5%;
   text-align: right;
 }
 
-.plus-icon{
+.plus-icon {
   background-color: white;
-  color:rgba(16, 95, 187, 1);
+  color: rgba(16, 95, 187, 1);
 }
 
-.plus-icon .mat-icon{
+.plus-icon .mat-icon {
   font-weight: bold;
 }
-
