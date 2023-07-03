@@ -4,7 +4,6 @@ import { AvoInfoService } from 'src/app/avo-info.service';
 
 // ng calendar
 import { CalendarEvent, CalendarView } from 'angular-calendar';
-import { setHours, setMinutes } from 'date-fns';
 
 @Component({
   selector: 'avo-month',
@@ -23,8 +22,6 @@ export class AvoMonthComponent {
   info: CalendarEvent[];
   startView: 'month' | 'year' | 'multi-year' = 'month';
 
-  isMonthView: boolean = true;
-
   constructor(private PersonInfo: AvoInfoService) {
     this.info = PersonInfo.getDates();
   }
@@ -36,10 +33,11 @@ export class AvoMonthComponent {
   }
 
   // ng calendar
-
   view: CalendarView = CalendarView.Day;
-
   viewDate: Date = new Date();
-
   events: CalendarEvent[] = this.PersonInfo.getDates();
+
+
+  // avo pop up
+  popUp: boolean = true;
 }
