@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'avo-layout',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.css']
 })
 export class AvoLayoutComponent {
-
+  startView: 'month' | 'year' | 'multi-year' = 'month';
 }
