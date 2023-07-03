@@ -8,23 +8,24 @@
       class="toggle-group"
     >
       <mat-button-toggle value="day">Heute</mat-button-toggle>
-      <mat-button-toggle value="week">W</mat-button-toggle>
-      <mat-button-toggle value="month">M</mat-button-toggle>
-      <mat-button-toggle value="multi-year">J</mat-button-toggle>
+      <mat-button-toggle value="month">W</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 
-  <mwl-calendar-day-view [viewDate]="viewDate" [events]="events">
-  </mwl-calendar-day-view>
+  <div [ngSwitch]="startView">
+    <div *ngSwitchCase="'day'" id="day-calender-div">
+      <mwl-calendar-day-view [viewDate]="viewDate" [events]="events">
+      </mwl-calendar-day-view>
+    </div>
 
-  <mat-calendar
-    *ngIf="isMonthView"
-    [(selected)]="selected"
-    [startView]="startView"
-    [startAt]="startAt"
-    panelClass="custom-calendar"
-  ></mat-calendar>
-
+    <mat-calendar
+      *ngSwitchCase="'month'"
+      [(selected)]="selected"
+      [startView]="startView"
+      [startAt]="startAt"
+      panelClass="custom-calendar"
+    ></mat-calendar>
+  </div>
   <div class="button-container">
     <button mat-fab class="plus-icon">
       <mat-icon>add</mat-icon>

@@ -129,6 +129,11 @@ mat-button-toggle {
   display: block;
   padding-right: 7.5%;
   text-align: right;
+  
+  position: absolute;
+  bottom:0;
+  right:0;
+  z-index: 999;
 }
 
 .plus-icon {
@@ -138,5 +143,9 @@ mat-button-toggle {
 
 .plus-icon .mat-icon {
   font-weight: bold;
+}
+
+.mwl-calendar-day-view .cal-day-hour-segment {
+  border: none;
 }
 

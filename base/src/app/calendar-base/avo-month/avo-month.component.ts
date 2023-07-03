@@ -10,6 +10,11 @@ import { setHours, setMinutes } from 'date-fns';
   selector: 'avo-month',
   templateUrl: './avo-month.component.html',
   styleUrls: ['./avo-month.component.css'],
+  styles:[`
+  .mwl-calendar-day-view {
+    border: none;
+  }
+`]
 })
 export class AvoMonthComponent {
   // ng material
@@ -36,27 +41,5 @@ export class AvoMonthComponent {
 
   viewDate: Date = new Date();
 
-  events: CalendarEvent[] = [
-    {
-      title: 'My first Event :=)',
-      start: setHours(setMinutes(new Date(), 0), 5),
-      end: setHours(setMinutes(new Date(), 0), 7),
-      color: {
-        primary: 'rgba(0, 0, 0, 0)',
-        secondary: 'rgba(228, 234, 239, 1)',
-        secondaryText: 'rgba(34, 87, 103, 1)',
-      },
-    },
-
-    {
-      title: 'My second Event :)',
-      start: setHours(setMinutes(new Date(), 0), 10),
-      end: setHours(setMinutes(new Date(), 0), 15),
-      color: {
-        primary: 'rgba(0, 0, 0, 0)',
-        secondary: 'rgba(240, 231, 218, 1)',
-        secondaryText: 'rgba(187, 141, 70, 1)',
-      },
-    },
-  ];
+  events: CalendarEvent[] = this.PersonInfo.getDates();
 }
