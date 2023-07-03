@@ -1,5 +1,21 @@
 <mat-card class="demo-inline-calendar-card">
+  <div class="calendar-header">
+    <img id="icon" src="\assets\Kalendar.png" alt="Kalendar" />
+    <mat-button-toggle-group
+      (change)="onChangeValue($event)"
+      name="fontStyle"
+      aria-label="Font Style"
+      class="toggle-group"
+    >
+      <mat-button-toggle value="day">Heute</mat-button-toggle>
+      <mat-button-toggle value="week">W</mat-button-toggle>
+      <mat-button-toggle value="month">M</mat-button-toggle>
+      <mat-button-toggle value="multi-year">J</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
   <mat-calendar
+    *ngIf="isMonthView"
     [(selected)]="selected"
     [startView]="startView"
     [startAt]="startAt"

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { AvoInfoService } from 'src/app/avo-info.service';
 
 @Component({
@@ -8,12 +9,19 @@ import { AvoInfoService } from 'src/app/avo-info.service';
 })
 export class AvoMonthComponent {
   selected: Date | null;
-  startView: 'month' | 'year' | 'multi-year' = 'month';
   startAt: Date = new Date();
-
   info: Date[];
+  startView: 'month' | 'year' | 'multi-year' = 'month';
+
+  isMonthView: boolean = true;
 
   constructor(private PersonInfo: AvoInfoService) {
     this.info = PersonInfo.getDates();
+  }
+
+  onChangeValue(event: MatButtonToggleChange) {
+    const selectedValue = event.value;
+    this.startView=selectedValue;
+    console.log(this.startView)
   }
 }
